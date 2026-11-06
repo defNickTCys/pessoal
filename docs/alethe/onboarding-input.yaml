@@ -1,0 +1,78 @@
+# Input de preparação para /alethe setup.
+# Não é a playbooks copy aprovada; não deve ser usada como política sem doctor + aprovação.
+version: 1
+status: proposal
+source_inventory:
+  google: ../api_google/modelos_listados_opencode
+  nvidia: ../nvidia_models
+  opencode_free: ../opencode_custom_free_models
+providers:
+  - claude
+  - codex
+  - agy
+  - opencode-google
+  - opencode-nvidia
+adapters:
+  opencode-google:
+    command: opencode
+    args: [run, --format, json, --model, google/<approved-model>]
+    promptTransport: argument
+    outputFormat: json
+    checked: opencode run --help
+    mode: write
+    isolate: true
+  opencode-nvidia:
+    command: scripts/nvidia-opencode-rate-limit
+    args: [run, --format, json, --model, nvidia/<approved-model>]
+    promptTransport: argument
+    outputFormat: json
+    checked: opencode run --help
+    mode: write
+    isolate: true
+    rateLimit:
+      requestsPerMinute: 40
+      safetyTarget: 35
+      sharedAcrossModels: true
+billing:
+  claude: subscription
+  codex: subscription
+  agy: subscription
+  opencode-google: api
+  opencode-nvidia: api
+tiers:
+  cheap:
+    claude: {}
+    codex: {}
+    agy: {}
+    opencode-google: {model: google/<approved-cheap-model>}
+    opencode-nvidia: {model: nvidia/<approved-cheap-model>}
+  standard:
+    claude: {}
+    codex: {}
+    agy: {}
+    opencode-google: {model: google/<approved-standard-model>}
+    opencode-nvidia: {model: nvidia/<approved-standard-model>}
+  strong:
+    claude: {}
+    codex: {}
+    agy: {}
+    opencode-google: {model: google/<approved-strong-model>}
+    opencode-nvidia: {model: nvidia/<approved-strong-model>}
+quota:
+  whenLow: switch-provider
+  onBothCritical: ask
+  whenSpare: ignore
+profiles:
+  base:
+    order: [claude, codex, agy, opencode-google, opencode-nvidia]
+  savings:
+    order: [codex, agy, opencode-google, claude, opencode-nvidia]
+  aggressive:
+    order: [claude, codex, agy, opencode-google, opencode-nvidia]
+approval_required:
+  - provider_inventory
+  - model_inventory
+  - billing
+  - tiers
+  - profile
+  - passive_mode
