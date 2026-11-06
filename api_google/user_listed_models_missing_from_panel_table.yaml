@@ -1,0 +1,28 @@
+user_listed_models_missing_from_panel_table:
+  aliases_pointers:
+    - model_id: "google/gemini-flash-latest"
+      status: "Ponteiro dinâmico (Alias)"
+      maps_to_in_panel: "Gemini 2.5 Flash (ou a versão Flash estável vigente)"
+      effective_limits: { rpm: "1K", tpm: "1M", rpd: "10K" }
+    - model_id: "google/gemini-flash-lite-latest"
+      status: "Ponteiro dinâmico (Alias)"
+      maps_to_in_panel: "Gemini 2.5 Flash Lite"
+      effective_limits: { rpm: "4K", tpm: "4M", rpd: "Ilimitado" }
+    - model_id: "google/gemini-pro-latest"
+      status: "Ponteiro dinâmico (Alias)"
+      maps_to_in_panel: "Gemini 2.5 Pro"
+      effective_limits: { rpm: 150, tpm: "2M", rpd: "1K" }
+
+  specialized_endpoints:
+    - model_id: "google/gemini-3.1-pro-preview-customtools"
+      status: "Variante de endpoint para Function Calling estrito"
+      maps_to_in_panel: "Compartilha a cota de 'Gemini 3.1 Pro' (25 RPM / 2M TPM / 250 RPD)"
+      note: "Usado quando o harness injeta ferramentas customizadas de código/bash."
+
+  missing_or_unprovisioned_revisions:
+    - model_id: "google/deep-research-max-preview-04-2026"
+      status: "Não provisionado na tabela (apenas 'Deep Research Pro Preview' aparece)"
+    - model_id: "google/gemini-3.5-flash"
+      status: "Não provisionado na tabela (o painel lista 'Gemini 3.5 Flash Lite' e 'Gemini 3.5 Transcribe', mas pula o 3.5 Flash base)"
+    - model_id: "google/gemini-3.7-flash"
+      status: "Não provisionado na tabela (o painel salta de 'Gemini 3.6 Flash' direto para 'Gemini 3.8 Flash')"

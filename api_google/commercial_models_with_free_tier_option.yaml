@@ -1,0 +1,55 @@
+commercial_models_with_free_tier_option:
+  - model_id: "google/gemini-2.5-flash"
+    panel_name: "Gemini 2.5 Flash"
+    tier_1_limits: { rpm: "1K", tpm: "1M", rpd: "10K", maps_grounding_rpd: "25K", search_grounding_rpd: "5K" }
+    when_charged: "Grátis em projeto sem Billing (até ~15 RPM / 1.5K RPD). Pago por token no projeto OpenCode2 (Tier 1)."
+
+  - model_id: "google/gemini-2.5-flash-lite"
+    panel_name: "Gemini 2.5 Flash Lite"
+    tier_1_limits: { rpm: "4K", tpm: "4M", rpd: "Ilimitado", maps_grounding_rpd: "25K", search_grounding_rpd: "5K" }
+    when_charged: "Grátis em projeto sem Billing (até ~15 RPM / 1.5K RPD). Pago por token no Tier 1."
+
+  - model_id: "google/gemini-2.5-pro"
+    panel_name: "Gemini 2.5 Pro"
+    tier_1_limits: { rpm: 150, tpm: "2M", rpd: "1K", maps_grounding_rpd: "25K", search_grounding_rpd: "5K" }
+    when_charged: "Grátis em projeto sem Billing (cota estrita ~2-5 RPM / 50 RPD). Pago por token no Tier 1 (tarifa majorada >200K tokens)."
+
+  - model_id: "google/gemini-3-flash-preview"
+    panel_name: "Gemini 3 Flash"
+    tier_1_limits: { rpm: "1K", tpm: "2M", rpd: "10K", maps_grounding_rpd: "25K", search_grounding_rpd: "1.5K" }
+    when_charged: "Grátis em projeto sem Billing (cota preview). Pago por token no Tier 1."
+
+  - model_id: "google/gemini-3.1-flash-lite"
+    panel_name: "Gemini 3.1 Flash Lite"
+    tier_1_limits: { rpm: "4K", tpm: "4M", rpd: "150K", maps_grounding_rpd: "25K", search_grounding_rpd: "1.5K" }
+    when_charged: "Grátis em projeto sem Billing. Pago por token no Tier 1."
+
+  - model_id: "google/gemini-3.1-pro-preview"
+    panel_name: "Gemini 3.1 Pro"
+    tier_1_limits: { rpm: 25, tpm: "2M", rpd: 250, maps_grounding_rpd: "25K", search_grounding_rpd: "1.5K" }
+    when_charged: "Cota gratuita mínima em projeto Free; pago por token no Tier 1 com teto rígido de 250 RPD."
+
+  - model_id: "google/gemini-3.5-flash-lite"
+    panel_name: "Gemini 3.5 Flash Lite"
+    tier_1_limits: { rpm: "4K", tpm: "4M", rpd: "150K", maps_grounding_rpd: "25K", search_grounding_rpd: "1.5K" }
+    when_charged: "Grátis em projeto sem Billing. Pago por token no Tier 1."
+
+  - model_id: "google/gemini-3.6-flash"
+    panel_name: "Gemini 3.6 Flash"
+    tier_1_limits: { rpm: "1K", tpm: "2M", rpd: "10K", maps_grounding_rpd: "25K", search_grounding_rpd: "1.5K" }
+    when_charged: "Grátis em projeto sem Billing. Pago por token no Tier 1."
+
+  - model_id: "google/gemini-3.8-flash"
+    panel_name: "Gemini 3.8 Flash"
+    tier_1_limits: { rpm: "1K", tpm: "2M", rpd: "10K", maps_grounding_rpd: "25K", search_grounding_rpd: "1.5K" }
+    when_charged: "Grátis em projeto sem Billing. Pago por token no Tier 1."
+
+  - model_id: "google/gemini-4-argon"
+    panel_name: "Gemini 4 Argon"
+    tier_1_limits: { rpm: "1K", tpm: "2M", rpd: "Ilimitado", maps_grounding_rpd: "25K", search_grounding_rpd: "1.5K" }
+    when_charged: "Acesso experimental restrito no Free; pago por token no Tier 1 com RPD ilimitado."
+
+  - model_id: "google/gemini-robotics-er-2-preview"
+    panel_name: "Gemini Robotics ER 2 Preview"
+    tier_1_limits: { rpm: "1K", tpm: "2M", rpd: "86.4K", maps_grounding_rpd: "25K" }
+    when_charged: "Cota gratuita de teste em projeto Free; pago por token no Tier 1."

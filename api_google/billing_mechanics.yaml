@@ -1,0 +1,6 @@
+billing_mechanics:
+  project_evaluated: "OpenCode2"
+  active_tier: "Tier 1 (Paid Billing Linked)"
+  free_to_paid_trigger: "Vínculo de conta de faturamento (Cloud Billing) ao projeto da API Key."
+  behavior_on_free_tier_limit_reached: "HTTP 429 (Resource Exhausted) - Bloqueio sem cobrança."
+  behavior_on_tier_1: "Cobrança imediata por 1M de tokens (Pay-as-you-go) desde a requisição #1 nos modelos comerciais."

@@ -1,0 +1,18 @@
+gemma_open_models:
+  models:
+    - model_id: "google/gemma-4-26b-a4b-it"
+      panel_name: "Gemma 4 26B"
+      architecture: "MoE (26B parâmetros totais, ~4B ativos por token)"
+      limits: { rpm: 30, tpm: "16K", rpd: "14.4K" }
+      cost: "$0.00 (Sem custo na API Gemini)"
+    - model_id: "google/gemma-4-31b-it"
+      panel_name: "Gemma 4 31B"
+      architecture: "Dense (31B parâmetros)"
+      limits: { rpm: 30, tpm: "16K", rpd: "14.4K" }
+      cost: "$0.00 (Sem custo na API Gemini)"
+
+  strict_usage_limitations:
+    - bottleneck_tpm: "Apenas 16.000 tokens por minuto (TPM). Se o OpenCode enviar um único arquivo grande ou histórico de sessão acima de 16K tokens em uma chamada, a requisição falha imediatamente por estouro de TPM."
+    - bottleneck_rpm: "Máximo de 30 requisições por minuto (média de 1 chamada a cada 2 segundos). Loops rápidos de subagentes causam HTTP 429."
+    - no_native_grounding: "Não aparecem na tabela de ferramentas de Fundamentação do Google Maps (25K RPD) nem de Pesquisa Google."
+    - recommended_use_in_opencode: "Apenas tarefas isoladas de baixo contexto (geração de mensagens de commit, explicação de funções curtas de até ~200 linhas ou formatação de texto)."

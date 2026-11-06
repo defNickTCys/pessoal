@@ -1,0 +1,21 @@
+always_paid_models_from_user_list:
+  - model_id: "google/deep-research-preview-04-2026"
+    panel_name: "Deep Research Pro Preview"
+    category: "Agentes"
+    tier_1_limits: { rpm: 1, tpm: "500K", rpd: "1.44K", maps_grounding_rpd: "25K" }
+    free_tier_available: false
+    billing_rule: "Cobrado desde a 1ª requisição via Interactions API."
+
+  - model_id: "google/deep-research-max-preview-04-2026"
+    panel_name: "Ausente no painel (Variante superior do Deep Research)"
+    category: "Agentes"
+    tier_1_limits: { rpm: 1, tpm: "500K", rpd: "1.44K" }
+    free_tier_available: false
+    billing_rule: "Sempre pago; exige Tier 1+ e Interactions API."
+
+  - model_id: "google/gemini-2.5-computer-use-preview-10-2025"
+    panel_name: "Computer Use Preview"
+    category: "Outros modelos (Agente de UI)"
+    tier_1_limits: { rpm: 150, tpm: "2M", rpd: "10K", maps_grounding_rpd: "25K" }
+    free_tier_available: false
+    billing_rule: "Sempre pago; faturado por tokens de entrada (screenshots) e ações."
